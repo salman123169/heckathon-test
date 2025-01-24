@@ -1,0 +1,34 @@
+/* style.css */
+
+/* Logo Style */
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  /* Animation for text */
+  .animated-text {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Navbar Style */
+  .navbar-nav .nav-item .nav-link {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+  
+  /* Add some spacing and padding */
+  section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  
