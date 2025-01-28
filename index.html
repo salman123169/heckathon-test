@@ -1,170 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Website</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .navbar {
-      background-color: orange;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "ZSPp0zGv6cE-od1oh",
+            });
+        })();
+    </script>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, rgb(17, 17, 219), #ffff8f);
+            height: ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* Make the logo responsive */
-    .navbar-brand img {
-      max-width: 150px;
-      height: auto;
-    }
+        .form-container {
+            background: aqua;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 400px;
+            animation: fadeIn 1.5s ease-out;
+        }
 
-    /* Footer styles */
-    footer {
-      background-color: #f8f9fa;
-      padding: 20px 0;
-      text-align: center;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    footer img {
-      width: 30px;
-      height: 30px;
-      margin: 0 15px;
-    }
+        h1 {
+            font-style: italic;
+            text-align: center;
+            color: rgb(29, 29, 227);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
 
-    footer p {
-      font-size: 14px;
-      color: #6c757d;
-    }
+        label {
+            font-size: 1rem;
+            color: #600e50;
+            margin-bottom: 5px;
+            display: block;
+        }
 
-    @media (max-width: 768px) {
-      footer img {
-        width: 25px;
-        height: 25px;
-        margin: 0 10px;
-      }
-      footer p {
-        font-size: 12px;
-      }
-    }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-    /* Carousel responsiveness */
-    .carousel-inner img {
-      width: 100%;
-      height: auto;
-    }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: cornflowerblue;
+            box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+        }
 
-    /* Section styles */
-    #about h2 {
-      font-size: 2rem;
-    }
+        .gender-group {
+            margin: 10px 0;
+        }
 
-    #about p {
-      font-size: 1.2rem;
-    }
+        .gender-group input {
+            margin-right: 5px;
+        }
 
-    @media (max-width: 768px) {
-      #about h2 {
-        font-size: 1.5rem;
-      }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, blueviolet, blue);
+            color: fuchsia;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-      #about p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+        button:hover {
+            background: linear-gradient(to right, purple, blueviolet);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes labelSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        label {
+            animation: labelSlide 1s ease-in-out;
+        }
+    </style>
 </head>
 <body>
+    <div class="form-container">
+        <h1>Contact Form</h1>
+        <form id="contactForm">
+            <div class="input">
+                <label for="name">Student Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="download.png" alt="Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About Us</a>
-        </li>
-      </ul>
+                <label for="fatherName">Father Name:</label>
+                <input type="text" id="fatherName" name="fatherName" placeholder="Enter father's name" required>
+
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" placeholder="Enter education" required>
+
+                <label for="message">Message for us:</label>
+                <textarea id="msg1" name="message" placeholder="Your message" rows="3" required></textarea>
+
+                <label for="email">Enter Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+                <label for="number">Your Contact:</label>
+                <input type="tel" id="number" name="contact" placeholder="Enter phone number" required>
+
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
     </div>
-  </div>
-</nav>
 
-<!-- About Section -->
-<section id="about">
-  <div class="container">
-    <h2 class="text-center animated-text">WELCOME TO DARAZ</h2>
-    <p class="text-center">DISCOVER THE BEST</p>
-  </div>
-</section>
+    <script>
+        function submitForm() {
+            let StudentName = document.getElementById("name").value;
+            let FatherName = document.getElementById("fatherName").value;
+            let Education = document.getElementById("education").value;
+            let Message = document.getElementById("msg1").value;
+            let Email = document.getElementById("email").value;
+            let Contact = document.getElementById("number").value;
+            let Gender = document.querySelector('input[name="gender"]:checked').value;
 
-<!-- Carousel -->
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="2791dc50-40be-4d9c-a049-2523b340c649_PK-1976-688.jpg_2200x2200q80.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="40a2384d-8a4e-4f46-b136-37fc7c661487_PK-1976-688.jpg_2200x2200q80.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="2791dc50-40be-4d9c-a049-2523b340c649_PK-1976-688.jpg_2200x2200q80.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+            let params = {
+                name: StudentName,
+                fatherName: FatherName,
+                education: Education,
+                message: Message,
+                email: Email,
+                contact: Contact,
+                gender: Gender
+            };
 
-<!-- Footer Section -->
-<footer>
-  <div>
-    <a href="https://www.facebook.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" alt="Instagram">
-    </a>
-    <a href="https://wa.me" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-  </div>
-  <p>&copy; 2025 Daraz. All rights reserved.</p>
-</footer>
-
-<!-- Bootstrap JS and Popper -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const animatedText = document.querySelector('.animated-text');
-    setTimeout(() => {
-      animatedText.classList.add('fadeIn');
-    }, 500);
-  });
-</script>
-
+            emailjs.send("service_mxywdp1", "template_tmoczt4", params)
+                .then((res) => {
+                    alert("Query Sent Successfully!");
+                    console.log(res);
+                })
+                .catch((error) => {
+                    alert("Failed to send query. Please try again.");
+                    console.error(error);
+                });
+        }
+    </script>
 </body>
 </html>
